@@ -21,7 +21,7 @@ interface ArbiterResponse {
 	aligned: boolean;
 }`;
 
-async function arbitrate(prompt, completion) {
+async function arbitrate({ prompt, completion }) {
 	const openaiResponse = await openai.createChatCompletion({
 		model: 'gpt-4',
 		messages: [

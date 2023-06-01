@@ -60,7 +60,10 @@ async function test() {
 			openai.createModeration({
 				input: convertToArbiterPrompt(testPrompt.prompt, testPrompt.completion),
 			}),
-			arbitrate(testPrompt.prompt, testPrompt.completion),
+			arbitrate({
+				prompt: testPrompt.prompt,
+				completion: testPrompt.completion,
+			}),
 		]);
 
 		console.log('User prompt:', testPrompt.prompt);
